@@ -9,6 +9,10 @@ import urllib.parse
 import webbrowser
 from pathlib import Path
 
+# Apply body param coercion patch before FastMCP creates tools.
+# Fixes LLM double-serialization of nested params like `reply` in createPosts.
+import patches  # noqa: F401, E402
+
 import httpx
 import requests
 from fastmcp import FastMCP
