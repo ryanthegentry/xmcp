@@ -11,6 +11,7 @@ from pathlib import Path
 
 # Apply body param coercion patch before FastMCP creates tools.
 # Fixes LLM double-serialization of nested params like `reply` in createPosts.
+# Hermes v0.9 PR #7118 did NOT fix this — patch still required (tested 2026-04-13).
 import patches  # noqa: F401, E402
 
 import httpx
